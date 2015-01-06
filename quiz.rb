@@ -17,7 +17,7 @@ QUESTIONS = [
 			"Sweet Potato Roll",
 			"Tokyo Roll"
 			],
-		:correct_answer => 1
+			:correct_answer => 1
 	},
 	{
 		:name => "How many chairs are in this room",
@@ -28,10 +28,32 @@ QUESTIONS = [
 			9
 		],
 			:correct_answer => 2
+	},
+	{
+		:name => "How many months does it take to complete the Ruby on Rails program at The Iron Yard",
+		:answers => [
+		1, 
+		2, 
+		3, 
+		4
+	   ],
+			:correct_answer => 2
+	},
+	{
+		:name => "How many days in a year",
+		:answers => [
+			200,
+			300, 
+			365,
+			500
+		],
+		:correct_answer => 2
 	}
 ]
 
 puts "Welcome to the Quiz Show!".upcase
+
+correct_answers = 0
 
 QUESTIONS.shuffle.each do |question|
 	puts "-" * 25
@@ -50,4 +72,7 @@ QUESTIONS.shuffle.each do |question|
 	end
 end
 
+Percentage = ((correct_answers.to_f / QUESTIONS.count) * 100)
+
 puts "You got #{correct_answers} out of #{QUESTIONS.count} correct."
+puts "Percentage of correct answers is: #{Percentage}!"
