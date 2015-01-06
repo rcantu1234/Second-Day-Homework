@@ -8,7 +8,7 @@ users_choice = gets.chomp
 
 number_guesses = 0
 
-random_number = 1 + rand(5)
+random_number = 1 + rand(100)
 
 while users_choice.to_i != random_number do
 	if  users_choice.to_i < random_number
